@@ -26,16 +26,16 @@ VERSION = None
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'Django>=3.11',
+    'Django>=4.11',
     'pynliner',
     'future>=0.16.0',
 ]
 
 # What packages are required only for tests?
 TESTS = [
-    'mock==2.0.0',
-    'pytest==4.3.1',
-    'pytest-django==3.4.8',
+    'mock>=2.0.0',
+    'pytest>=4.3.1',
+    'pytest-django>=3.4.8',
 ]
 
 # What packages are optional?
