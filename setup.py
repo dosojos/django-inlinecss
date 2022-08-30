@@ -21,7 +21,7 @@ DESCRIPTION = 'A Django app useful for inlining CSS (primarily for e-mails)'
 URL = 'https://github.com/roverdotcom/django-inlinecss'
 EMAIL = 'philip@rover.com'
 AUTHOR = 'Philip Kimmey'
-REQUIRES_PYTHON = '>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <3.7'
+REQUIRES_PYTHON = '>=2.7'
 VERSION = None
 
 # What packages are required for this module to be executed?
@@ -70,7 +70,7 @@ except FileNotFoundError:
 # Load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(here, SRC_DIR, '__version__.py')) as f:
+    with open(os.path.join(here, SRC_DIR, '__version__.py'), encoding="utf-8") as f:
         exec(f.read(), about)
 else:
     about['__version__'] = VERSION
