@@ -30,7 +30,7 @@ class StaticfilesFinderCSSLoader(BaseCSSLoader):
         if expanded_path is None:
             raise IOError('{} does not exist'.format(path))
 
-        with open(expanded_path, 'rb',  encoding="utf-8") as css_file:
+        with open(expanded_path, 'rb', errors="ignore") as css_file:
             return css_file.read().decode('utf-8')
 
 

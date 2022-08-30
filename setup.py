@@ -26,7 +26,7 @@ VERSION = None
 
 # What packages are required for this module to be executed?
 REQUIRED = [
-    'Django>=1.11',
+    'Django>=3.11',
     'pynliner',
     'future>=0.16.0',
 ]
@@ -62,7 +62,7 @@ except NameError:
     pass
 
 try:
-    with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
+    with io.open(os.path.join(here, 'README.md'), errors="ignore") as f:
         long_description = '\n' + f.read()
 except FileNotFoundError:
     long_description = DESCRIPTION
@@ -70,7 +70,7 @@ except FileNotFoundError:
 # Load the package's __version__.py module as a dictionary.
 about = {}
 if not VERSION:
-    with open(os.path.join(here, SRC_DIR, '__version__.py'), encoding="utf-8") as f:
+    with open(os.path.join(here, SRC_DIR, '__version__.py'), errors="ignore") as f:
         exec(f.read(), about)
 else:
     about['__version__'] = VERSION
@@ -140,6 +140,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10',
         'Topic :: Communications :: Email',
         'Topic :: Text Processing :: Markup :: HTML',
     ],
